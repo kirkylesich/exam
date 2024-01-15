@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>
+            {{ doctor['name'] }}
+        </title>
+    </head>
+    <body>
+        <h1>
+            Doctor: {{ doctor['name'] }}
+        </h1>
+        
+        <form method="post" action="{{ url_for('doctor', doctor_id=doctor['id']) }}">
+            <div>
+                <label for="patient_name">Patient name</label>
+                <input type="text" id="patient_name" name="patient_name" required>
+            </div>
+            <div>
+                <label for="date_of_treatment">Date of treatment</label>
+                <input type="date" id="date_of_treatment" name="date_of_treatment" required>
+            </div>
+            <input type="submit" value="Add record">
+        </form>
+        <h2> History: </h2>
+        <ul>
+            {% for history in histories %}
+            <li>
+                {{ history.patient_name }} - {{ history.date_of_treatment }}
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

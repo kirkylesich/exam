@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>
+            Global History
+        </title>
+    </head>
+    <body>
+        <h1>
+            History
+        </h1>
+        <ul>
+            {% for history in histories %}
+            <li> {{ history.id}} ID OF TREATMENT</li>
+            <li> {{ history.doctor_name}} DOCTOR NAME</li>
+            <li> {{ history.patient_name}} PATIENT NAME</li>
+            <li> {{ history.date_of_treatment}}  DATE OF TREATMENT</li>
+            <br>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
